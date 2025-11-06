@@ -18,7 +18,7 @@ graph TD
   A[Next.js App Router] -->|fetch /api/dial| B(Telephony Orchestrator)
   B -->|machineDetection async AMD| C[Twilio Voice]
   B -->|log| D[(Postgres/Prisma)]
-  C -->|status callbacks| 
+  C -->|status callbacks| E[Status Webhook Handler]
   C -->|media stream| F[Realtime Audio Router]
   F -->|strategy factory| G{AMD Detector}
   G --> H1[Twilio Native]
@@ -28,6 +28,7 @@ graph TD
   H3 --> I[GPU Optimized Wav2Vec]
   H4 --> J[Gemini Live Session]
   B --> K[Agent Bridge]
+
 ```
 
 ## Getting Started
